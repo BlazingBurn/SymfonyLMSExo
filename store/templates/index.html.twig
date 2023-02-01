@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	-  Accueil Product
+{% endblock %}
+
+{% block body %}
+
+	<h2 class="titlePage">All products</h2>
+	<ul class="products">
+		{% for element in products %}
+			<li class="product">
+                <h3>{{element.nom}}</h3>
+				<img src="{{element.image}}" alt="{{element.image}}">
+				<div class="prix">
+					<p class="priceStyle">Le prix est de : {{element.prix}}€</p>
+					<a class="btn btn-success" href="{{ url('product.detail',{'productName':element.nom}) }}">En savoir plus</a>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+
+
+{% endblock %}
