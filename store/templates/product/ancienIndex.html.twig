@@ -2,13 +2,12 @@
 
 {% block title %}
 	{{ parent() }}
-	-  Accueil
+	-  Accueil Product
 {% endblock %}
 
 {% block body %}
 
-	<h2>Accueil</h2>
-	<h2 class="titlePage">3 random products</h2>
+	<h2 class="titlePage">All products</h2>
 	<ul class="products">
 		{% for element in products %}
 			<li class="product">
@@ -16,9 +15,11 @@
 				<img src="{{ asset('images/') }}{{element.image}}" alt="{{element.image}}">
 				<div class="prix">
 					<p class="priceStyle">Le prix est de : {{element.price}}€</p>
+					<a class="btn btn-success" href="{{ url('product.detail',{'slug':element.slug}) }}">En savoir plus</a>
 				</div>
 			</li>
 		{% endfor %}
 	</ul>
+
 
 {% endblock %}
