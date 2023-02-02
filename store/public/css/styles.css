@@ -1,3 +1,7 @@
+.flexNav {
+    display: flex;
+    justify-content: space-between;
+}
 
 .titlePage {
     text-align: center;
@@ -5,7 +9,7 @@
 
 .products{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 .product{

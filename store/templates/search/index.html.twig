@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+-  Search Product
+{% endblock %}
+
+{% block body %}
+
+	<h2>Résultat de votre recherche : </h2>
+	<ul class=products>
+		{% for product in products %}
+			<li class="product">
+                <h3>{{product.name}}</h3>
+				<img src="{{ asset('images/' ~ product.image ) }}" alt="{{product.image}}">
+				<div class="prix">
+					<p class="priceStyle">Le prix est de : {{product.price|format_currency('EUR', locale='fr')}}</p>
+					<a class="btn btn-success" href="{{ url('product.detail',{'slug': product.slug}) }}">En savoir plus</a>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

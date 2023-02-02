@@ -70,6 +70,16 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
 
+    public function search($research): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.name LIKE :research')
+            ->setParameter('research', '%'.$research.'%')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */

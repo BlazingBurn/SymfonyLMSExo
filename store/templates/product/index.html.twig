@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-{{ parent() }}
 -  Accueil Product
 {% endblock %}
 
 {% block body %}
+
+        {{ form_start(form, { attr : { novalidate: 'novalidate' } }) }}                
+        {{ form_end(form) }}
 
 <h2 class="titlePage">All products</h2>
 <p>Il y a {{ nbProduct }} produits.</p>
