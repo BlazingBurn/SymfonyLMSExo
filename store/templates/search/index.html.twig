@@ -6,6 +6,9 @@
 
 {% block body %}
 
+	{{ form_start(form, { attr : { novalidate: 'novalidate' } }) }}                
+	{{ form_end(form) }}
+
 	<h2>Résultat de votre recherche : </h2>
 	<ul class=products>
 		{% for product in products %}
